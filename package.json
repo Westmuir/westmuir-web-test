@@ -1,0 +1,42 @@
+{
+  "name": "westmuir-web",
+  "version": "1.0.0",
+  "description": "westmuir web",
+  "main": "index.html",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "start": "wireit",
+    "debug": "DEBUG=* npx @11ty/eleventy"
+  },
+  "wireit": {
+    "start": {
+      "command": "npx @11ty/eleventy --serve"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "prettier": "^3.1.0",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "wireit": "^0.14.1"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-organize-imports"
+    ],
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "arrowParens": "avoid",
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "printWidth": 100
+        }
+      }
+    ]
+  }
+}
