@@ -1,0 +1,9 @@
+.wcdt-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wcdt-content {
+  width: 80%;
+}
