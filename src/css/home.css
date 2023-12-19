@@ -1,3 +1,13 @@
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-banner {
+  width: 1024;
+  height: 250;
+}
+
 .home-aside {
   background-color: #fff;
   text-align: center;
@@ -21,6 +31,25 @@
 
 .home-images-row-narrow {
   max-width: 80%;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.wcdt-logo {
+  width: 85px;
+}
+.pfa-logo {
+  width: 150px;
+}
+
+.snh-logo {
+  width: 350px;
+}
+
+.home-highlight {
+  border: 1px solid #222;
 }
 
 .home-image-aside {
@@ -35,6 +64,8 @@
 
 .home-intro {
   max-width: 1024px;
+  text-align: center;
+  font-size: 18px;
 }
 
 .home-main {

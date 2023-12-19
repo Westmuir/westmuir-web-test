@@ -2,39 +2,37 @@ body {
   background-image: url();
   background-repeat: repeat;
   background-color: #ffffcc;
+
+  font-family: 'Roboto', sans-serif;
 }
 .style1 {
   font-size: 24px;
 }
 .style2 {
-  font-family: 'Maiandra GD';
-  font-size: 18px;
+  font-size: 16px;
 }
 .style4 {
-  font-family: 'Maiandra GD';
-  font-size: 18px;
+  font-size: 16px;
 }
 .style6 {
   font-size: 24px;
   color: #000066;
-  font-family: 'Maiandra GD';
 }
 
 .style7 {
-  font-size: 18px;
+  font-size: 16px;
 }
 .style8 {
-  font-family: 'Maiandra GD';
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .style10 {
   color: #0000ff;
-  font-size: 18px;
+  font-size: 16px;
 }
 .style13 {
   color: #000066;
-  font-size: 18px;
+  font-size: 16px;
 }
 .style14 {
   color: #000066;
@@ -44,29 +42,26 @@ body {
   font-size: 12px;
 }
 .style45 {
-  font-family: 'Maiandra GD';
-  font-size: 24px;
+  font-size: 22px;
   color: #339933;
 }
 .style48 {
   color: #ff0000;
-  font-size: 24px;
+  font-size: 22px;
 }
 .style54 {
   color: #66ff00;
   font-weight: bold;
 }
 .style56 {
-  font-size: 18px;
+  font-size: 16px;
 }
 .style60 {
-  font-family: 'Maiandra GD';
-  font-size: 24px;
+  font-size: 22px;
   color: #ff0000;
 }
 .style62 {
-  font-family: 'Maiandra GD';
-  font-size: 18px;
+  font-size: 16px;
   color: #339933;
 }
 .style63 {
@@ -85,20 +80,28 @@ body {
   --line-color: red;
 }
 
+:root {
+  --grid-border: 3px double #666;
+}
 .nav-main {
   display: grid;
   width: 1024px;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0;
-  overflow: hidden;
   margin-top: 20px;
-  border: 2px solid #666;
-  border-radius: 5px;
+  border-collapse: collapse;
+  border-top: var(--grid-border);
+  border-left: var(--grid-border);
+  font-size: 18px;
+}
+
+.nav-item {
+  border-right: var(--grid-border);
+  border-bottom: var(--grid-border);
 }
 
 .nav-item {
   text-align: center;
   padding: 3px;
   position: relative;
-  outline: 1px solid #666;
 }
