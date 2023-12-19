@@ -9,6 +9,10 @@ title: Westmuir Village, Angus
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <title>{{title}}</title>
     <link rel="stylesheet" href="/css/site.css" />
+
+    {% if css %} {% for link in css %}
+    <link rel="stylesheet" href="{{link}}" />
+    {% endfor %} {% endif %}
   </head>
 
   <body>

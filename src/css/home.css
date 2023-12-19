@@ -1,0 +1,34 @@
+.home-aside {
+  background-color: #fff;
+  text-align: center;
+  vertical-align: top;
+}
+
+.home-content {
+  vertical-align: top;
+}
+
+.home-item {
+  padding: 20px;
+}
+
+.home-images-row {
+  display: flex;
+  flex: 1;
+  margin-top: 15px;
+  justify-content: space-between;
+}
+
+.home-images-row-narrow {
+  max-width: 80%;
+}
+
+.home-image-aside {
+  display: flex;
+  img {
+    margin-right: 20px;
+  }
+  div {
+    text-align: left;
+  }
+}
