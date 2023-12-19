@@ -36,6 +36,12 @@
         "options": {
           "printWidth": 100
         }
+      },
+      {
+        "files": "*.njk",
+        "options": {
+          "parser": "html"
+        }
       }
     ]
   }

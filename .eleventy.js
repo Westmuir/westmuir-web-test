@@ -9,7 +9,7 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
-    templateFormats: ['md', 'html'],
+    templateFormats: ['md', 'html', 'njk'],
     dir: {
       input: 'src',
     },
