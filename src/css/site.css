@@ -109,6 +109,12 @@ body {
   border: 1px solid #666;
 }
 
+.column-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5px;
+}
+
 .column-3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
