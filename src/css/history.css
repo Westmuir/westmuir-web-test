@@ -1,0 +1,39 @@
+.history-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid #666;
+  gap: 5px;
+  padding: 5px;
+}
+
+.history-item {
+  text-align: center;
+  background-color: #ffccff;
+  border: 1px solid #666;
+}
+
+.history-item:nth-child(even) {
+  background-color: #99ff66;
+}
+
+.history-section {
+  margin-top: 2em;
+}
+
+.history-row {
+  display: flex;
+}
+.histtory-row-links {
+  margin: auto;
+}
+
+.history-link {
+  flex: 1;
+  text-align: center;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.history-intro {
+  text-align: center;
+}
