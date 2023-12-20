@@ -22,6 +22,7 @@
 
 .history-row {
   display: flex;
+  margin-top: 1em;
 }
 .histtory-row-links {
   margin: auto;
@@ -36,4 +37,19 @@
 
 .history-intro {
   text-align: center;
+}
+
+.history-item-text {
+  flex: 1;
+  margin-left: 1em;
+  margin-right: 1em;
+  font-size: 18px;
+}
+
+.history-item-image {
+  margin-left: 1em;
+}
+
+.history-item-image img + img {
+  margin-left: 1em;
 }
