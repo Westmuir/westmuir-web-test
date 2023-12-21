@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../stuff/test.js"],
+  "sourcesContent": ["console.log('test');\n"],
+  "mappings": ";AAAA,QAAQ,IAAI,MAAM;",
+  "names": []
+}

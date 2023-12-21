@@ -1,5 +1,7 @@
 const jsDir = 'lib';
 
+const inlineJS = require('./eleventy-helpers/shortcodes/inline-js.cjs');
+
 module.exports = function (eleventyConfig) {
   eleventyConfig
     .addPassthroughCopy('src/images')
@@ -12,6 +14,8 @@ module.exports = function (eleventyConfig) {
 
   // Add this for 11ty's --watch flag
   eleventyConfig.addWatchTarget(`./${jsDir}/**/*.js`);
+
+  inlineJS(eleventyConfig, true, { jsDir });
 
   eleventyConfig.addLayoutAlias('default', 'layouts/base.html');
 
