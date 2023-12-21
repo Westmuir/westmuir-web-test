@@ -7,6 +7,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addWatchTarget('./src/css/');
 
+  eleventyConfig.addLayoutAlias('default', 'layouts/base.html');
+
   eleventyConfig.addGlobalData('permalink', () => {
     return data => `${data.page.filePathStem}.${data.page.outputFileExtension}`;
   });
