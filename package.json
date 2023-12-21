@@ -5,28 +5,24 @@
   "main": "index.html",
   "scripts": {
     "build:dev": "wireit",
-    "start": "npm run serve --watch",
+    "build:dev:eleventy": "wireit",
+    "start": "npm run build:dev:eleventy",
     "debug": "DEBUG=* npx @11ty/eleventy",
-    "serve": "wireit"
+    "serveX": "wireit"
   },
   "wireit": {
     "build:dev": {
       "dependencies": [
-        "build:dev:eleventy"
+        "build:dev:eleventy",
+        "build:dev:js"
       ]
     },
     "build:dev:eleventy": {
-      "command": "NODE_ENV=DEV eleventy",
+      "command": "NODE_ENV=DEV eleventy --serve",
       "files": [
         "src",
         "lib",
         "eleventy.config.cjs"
-      ],
-      "output": [
-        "_site"
-      ],
-      "dependencies": [
-        "build:dev:js"
       ]
     },
     "build:dev:js": {
@@ -42,7 +38,7 @@
     "startX": {
       "command": "npx @11ty/eleventy --serve"
     },
-    "serve": {
+    "serveX": {
       "command": "wds --watch --root-dir _site",
       "service": true,
       "dependencies": [

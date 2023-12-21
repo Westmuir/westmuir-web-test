@@ -109,6 +109,16 @@ body {
   border: 1px solid #666;
 }
 
+@media screen and (max-width: 1023px) {
+  .banner-image {
+    max-width: 768px;
+  }
+
+  .nav-main {
+    width: 768px;
+  }
+}
+
 .column-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
