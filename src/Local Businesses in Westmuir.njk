@@ -3,41 +3,26 @@ layout: base.html
 title: Local Westmuir Companies
 ---
 
-<table width="1024" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td>
-      <img
-        src="images/Local Businesses/Banner_Local_Businesses.jpg"
-        alt="Banner_Galleries"
-        name="Banner_Galleries"
-        width="1024"
-        height="200"
-        border="1"
-        id="Banner_Galleries"
-      />
-    </td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>{% include 'nav.njk' %}</td>
-  </tr>
-</table>
-<table width="1024" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td colspan="5">
-      <p align="center" class="style2">
-        Westmuir is host to a number of successful companies which operate
-        throughout Angus and much further afield. The links below offer contact
-        details and may also lead to further information or to the relevant
-        company website where appropriate.
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><a href="Link Page to Seasonal Pictures.html"></a></td>
-    <td align="center">
+<div class="main-wrapper">
+  <img
+    class="banner-image"
+    src="images/Local Businesses/Banner_Local_Businesses.jpg"
+    alt="Banner_Galleries"
+    name="Banner_Galleries"
+    id="Banner_Galleries"
+  />
+
+  {% include 'nav.njk' %}
+
+  <div class="main-content">
+    <p>
+      Westmuir is host to a number of successful companies which operate
+      throughout Angus and much further afield. The links below offer contact
+      details and may also lead to further information or to the relevant
+      company website where appropriate.
+    </p>
+
+    <div class="content-row">
       <a
         href="http://www.plovermuircottages.co.uk"
         target="_blank"
@@ -51,8 +36,7 @@ title: Local Westmuir Companies
           border="1"
           id="Plovermuir"
       /></a>
-    </td>
-    <td align="center">
+
       <a
         href="http://www.garysinclairarchitecture.com/"
         target="_blank"
@@ -67,8 +51,6 @@ title: Local Westmuir Companies
           border="1"
           id="Gary Sinclair" /></a
       ><a href="http://www.garysinclairarchitecture.com/" target="_blank"></a>
-    </td>
-    <td align="center">
       <a
         href="http://www.patchworkcottage.co.uk/"
         target="_blank"
@@ -83,26 +65,7 @@ title: Local Westmuir Companies
           border="1"
           id="Patchwork"
       /></a>
-    </td>
-    <td align="center">&nbsp;</td>
-  </tr>
-</table>
-<table width="1024" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>{% include 'nav.njk'%}</td>
-  </tr>
-</table>
-<p align="center">
-  <a href="http://get.adobe.com/uk/reader/otherversions/" target="_blank"
-    ><img
-      src="images/Adobe _Reader.gif"
-      alt="Get Adobe Reader"
-      width="112"
-      height="33"
-      border="0"
-  /></a>
-</p>
-<p>&nbsp;</p>
+    </div>
+  </div>
+  {% include 'nav.njk'%}
+</div>
