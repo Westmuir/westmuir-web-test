@@ -1,9 +1,9 @@
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy('src/images');
-  eleventyConfig.addPassthroughCopy('src/favicon.ico');
-  // eleventyConfig.addPassthroughCopy("src/**/*.html");
-  eleventyConfig.addPassthroughCopy('src/PDF Pages');
-  eleventyConfig.addPassthroughCopy('src/css/*.css');
+  eleventyConfig
+    .addPassthroughCopy('src/images')
+    .addPassthroughCopy('src/favicon.ico')
+    .addPassthroughCopy('src/PDF Pages')
+    .addPassthroughCopy('src/css/*.css');
 
   eleventyConfig.addWatchTarget('./src/css/');
 
@@ -13,6 +13,8 @@ module.exports = function (eleventyConfig) {
 
   return {
     templateFormats: ['md', 'html', 'njk'],
+    htmlTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
     dir: {
       input: 'src',
     },
