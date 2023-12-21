@@ -4,7 +4,7 @@
   "description": "westmuir web",
   "main": "index.html",
   "scripts": {
-    "build": "npx @11ty/eleventy",
+    "build:dev": "wireit",
     "start": "npm run serve --watch",
     "debug": "DEBUG=* npx @11ty/eleventy",
     "serve": "wireit"
