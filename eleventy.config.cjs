@@ -1,11 +1,17 @@
+const jsDir = 'lib';
+
 module.exports = function (eleventyConfig) {
   eleventyConfig
     .addPassthroughCopy('src/images')
     .addPassthroughCopy('src/favicon.ico')
     .addPassthroughCopy('src/PDF Pages')
-    .addPassthroughCopy('src/css/*.css');
+    .addPassthroughCopy('src/css/*.css')
+    .addPassthroughCopy({ [`${jsDir}/`]: 'js/' });
 
   eleventyConfig.addWatchTarget('./src/css/');
+
+  // Add this for 11ty's --watch flag
+  eleventyConfig.addWatchTarget(`./${jsDir}/**/*.js`);
 
   eleventyConfig.addLayoutAlias('default', 'layouts/base.html');
 

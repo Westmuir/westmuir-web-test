@@ -5,18 +5,46 @@
   "main": "index.html",
   "scripts": {
     "build": "npx @11ty/eleventy",
-    "start": "wireit",
-    "debug": "DEBUG=* npx @11ty/eleventy"
+    "start": "npm run serve --watch",
+    "debug": "DEBUG=* npx @11ty/eleventy",
+    "serve": "wireit"
   },
   "wireit": {
-    "start": {
+    "build:dev": {
+      "dependencies": [
+        "build:dev:eleventy"
+      ]
+    },
+    "build:dev:eleventy": {
+      "command": "NODE_ENV=DEV eleventy",
+      "files": [
+        "src",
+        "lib",
+        "eleventy.config.cjs"
+      ],
+      "output": [
+        "_site"
+      ]
+    },
+    "startX": {
       "command": "npx @11ty/eleventy --serve"
+    },
+    "serve": {
+      "command": "wds --watch --root-dir _site",
+      "service": true,
+      "dependencies": [
+        {
+          "script": "build:dev",
+          "cascade": false
+        }
+      ]
     }
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "@web/dev-server": "^0.4.1",
     "prettier": "^3.1.1",
     "prettier-plugin-organize-imports": "^3.2.4",
     "wireit": "^0.14.1"
