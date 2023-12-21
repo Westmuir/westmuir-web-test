@@ -114,6 +114,9 @@ body {
   grid-template-columns: 1fr 1fr;
   column-gap: 5px;
 }
+.item-link {
+  margin-bottom: 0.5em;
+}
 
 .column-3 {
   display: grid;
