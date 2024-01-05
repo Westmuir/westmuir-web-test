@@ -7,6 +7,8 @@ module.exports = function (eleventyConfig) {
     .addPassthroughCopy('src/images')
     .addPassthroughCopy('src/favicon.ico')
     .addPassthroughCopy('src/PDF Pages')
+    .addPassthroughCopy('src/Walk of the Month')
+    .addPassthroughCopy('src/videos')
     .addPassthroughCopy('src/css/*.css')
     .addPassthroughCopy({ [`${jsDir}/`]: 'js/' });
 
