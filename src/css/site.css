@@ -153,3 +153,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.content-row.content-row-advert {
+  margin-left: 2em;
+  margin-right: 2em;
+}
