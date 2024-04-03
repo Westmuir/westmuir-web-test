@@ -1,0 +1,15 @@
+.news-item-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.news-item {
+  display: flex;
+  align-items: center;
+}
+
+.agm-invite {
+  width: 400px;
+  height: auto;
+  margin-left: 2em;
+}
