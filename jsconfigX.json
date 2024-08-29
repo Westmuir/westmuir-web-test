@@ -4,10 +4,7 @@
   "compilerOptions": {
     "checkJs": true,
     "resolveJsonModule": true,
-    "baseUrl": "./src",
-    "paths": {
-      "~/*": ["*"]
-    },
+
     "moduleResolution": "node",
     "module": "es2022",
     "target": "es2022"

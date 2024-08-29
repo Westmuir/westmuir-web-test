@@ -1,4 +1,6 @@
+import gzipPlugin from '@luncheon/esbuild-plugin-gzip';
 import esbuild from 'esbuild';
+import { minifyHTMLLiteralsPlugin } from 'esbuild-plugin-minify-html-literals';
 import tinyGlob from 'tiny-glob';
 
 // dev mode build
@@ -10,12 +12,12 @@ const jsFolder = DEV ? 'lib' : 'build';
 // <lit-island import="js/components/element-definition.js"></lit-island>
 const tsEntrypoints = [
   // // entrypoints for hydrating lit-islands
-  './src/hydration-entrypoints/**/*.js',
+  // './src/hydration-entrypoints/**/*.js',
   // // also include a bundle for each individual page
   './src/pages/*.js',
   // // SSR stuff
-  './src/ssr-utils/lit-hydrate-support.ts',
-  './src/ssr-utils/is-land.ts',
+  // './src/ssr-utils/lit-hydrate-support.ts',
+  // './src/ssr-utils/is-land.js',
 ];
 
 const filesPromises = tsEntrypoints.map(async entry => tinyGlob(entry));
