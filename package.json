@@ -1,14 +1,20 @@
 {
   "name": "westmuir-web",
-  "version": "1.0.0",
+  "version": "24.8.1",
   "description": "westmuir web",
   "main": "index.html",
   "scripts": {
+    "start": "npm run serve",
+    "dev": "npm run serve:dev --watch",
+    "serve": "wireit",
+    "serve:dev": "wireit",
     "build:dev": "wireit",
     "build:dev:eleventy": "wireit",
-    "start": "npm run build:dev:eleventy",
-    "debug": "DEBUG=* npx @11ty/eleventy",
-    "serveX": "wireit"
+    "build:dev:js": "wireit",
+    "build:type-check": "wireit",
+    "build:prod": "wireit",
+    "build:prod:eleventy": "wireit",
+    "build:prod:js": "wireit"
   },
   "wireit": {
     "build:dev": {
@@ -18,28 +24,63 @@
       ]
     },
     "build:dev:eleventy": {
-      "command": "NODE_ENV=DEV eleventy --serve",
+      "command": "NODE_ENV=DEV eleventy --config=eleventy.cjs",
       "files": [
-        "src",
-        "lib",
-        "eleventy.config.cjs"
+        "site/**/*",
+        "lib/**/*",
+        "eleventy.cjs"
+      ],
+      "output": [
+        "_dev"
+      ],
+      "dependencies": [
+        "build:dev:js"
       ]
     },
     "build:dev:js": {
       "command": "NODE_ENV=DEV node esbuild.config.mjs",
       "files": [
-        "stuff",
+        "src/**/*",
+        "jsconfig.json",
         "esbuild.config.mjs"
       ],
       "output": [
-        "lib"
+        "lib/**/*"
       ]
     },
-    "startX": {
-      "command": "npx @11ty/eleventy --serve"
+    "build:prod": {
+      "dependencies": [
+        "build:prod:eleventy",
+        "build:prod:js"
+      ]
     },
-    "serveX": {
-      "command": "wds --watch --root-dir _site",
+    "build:prod:eleventy": {
+      "command": "NODE_ENV=PROD eleventy --config=eleventy.cjs",
+      "files": [
+        "site/**/*",
+        "build/**/*",
+        "eleventy.cjs"
+      ],
+      "output": [
+        "_prod"
+      ],
+      "dependencies": [
+        "build:prod:js"
+      ]
+    },
+    "build:prod:js": {
+      "command": "NODE_ENV=PROD node esbuild.config.mjs",
+      "files": [
+        "src/**/*",
+        "jsconfig.json",
+        "esbuild.config.mjs"
+      ],
+      "output": [
+        "build/**/*"
+      ]
+    },
+    "serve:dev": {
+      "command": "wds --watch --root-dir _dev --open",
       "service": true,
       "dependencies": [
         {
@@ -47,20 +88,52 @@
           "cascade": false
         }
       ]
+    },
+    "serve": {
+      "command": "npm run build:prod && wds --watch --root-dir _prod",
+      "service": true,
+      "dependencies": [
+        {
+          "script": "build:prod",
+          "cascade": false
+        }
+      ]
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Westmuir/westmuir-web.git"
+  },
+  "keywords": [
+    "11ty",
+    "eleventy",
+    "lit",
+    "lit-element",
+    "SSR",
+    "Westmuir",
+    "Community"
+  ],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Westmuir/westmuir-web/issues"
+  },
+  "homepage": "https://github.com/Westmuir/westmuir-web#readme",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@material/web": "^1.1.1",
-    "@web/dev-server": "^0.4.1",
+    "@lit-labs/eleventy-plugin-lit": "^1.0.3",
+    "@luncheon/esbuild-plugin-gzip": "^0.1.0",
+    "@web/dev-server": "^0.4.6",
     "@webcomponents/template-shadowroot": "^0.2.1",
-    "esbuild": "^0.19.10",
-    "prettier": "^3.1.1",
-    "prettier-plugin-organize-imports": "^3.2.4",
+    "clean-css": "^5.3.3",
+    "esbuild": "^0.23.1",
+    "esbuild-plugin-minify-html-literals": "^2.0.1",
+    "html-minifier": "^4.0.0",
+    "prettier": "^3.3.3",
+    "prettier-plugin-organize-imports": "^4.0.0",
     "tiny-glob": "^0.2.9",
-    "wireit": "^0.14.1"
+    "typescript": "^5.4.2",
+    "wireit": "^0.14.8"
   },
   "prettier": {
     "plugins": [
@@ -87,6 +160,9 @@
     ]
   },
   "dependencies": {
-    "@11ty/is-land": "^4.0.0"
+    "@11ty/is-land": "^4.0.0",
+    "@lit-labs/ssr-client": "^1.1.7",
+    "@material/web": "^2",
+    "lit": "^3.1.2"
   }
 }

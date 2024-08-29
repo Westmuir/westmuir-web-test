@@ -1,6 +1,9 @@
-_site/
-_site*/
-_temp/
-node_modules/
+_dev
+_prod
+node_modules
+.wireit
+/lib
+/build
+*.tsbuildinfo
 .DS_Store
 .wireit/
