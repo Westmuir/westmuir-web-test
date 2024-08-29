@@ -7,6 +7,7 @@ import '@material/web/tabs/primary-tab.js';
 import '@material/web/tabs/tabs.js';
 import { LitElement, css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { when } from 'lit/directives/when.js';
 
 const navMenuKeys = new Map([
   ['mydetails', { path: '/details' }],
@@ -19,23 +20,111 @@ const onChoose = ({ target }) => {
   target.nextElementSibling?.show();
 };
 
+const tabList = [
+  { label: 'Home', path: 'home', href: '/', icon: 'home' },
+  {
+    label: 'Woodland',
+    path: '/Woodland_Park.html',
+  },
+  {
+    label: 'Westmuir Trust',
+    path: '/Westmuir Community Development Trust.html',
+  },
+  //   {
+  //     label: 'Loch of Kinnordy',
+  //     path: '/Loch of Kinnordy.html',
+  //   },
+  //   {
+  //     label: 'Paths Network',
+  //     path: '/Path Network.html',
+  //   },
+  {
+    label: 'Web Links',
+    path: '/Web_Links.html',
+  },
+  {
+    label: 'Activities',
+    path: '/Local_Activities.html',
+  },
+  {
+    label: 'Contact Us',
+    path: '/Contact_Us.html',
+  },
+  {
+    label: 'History Past & Present',
+    path: '/History - Past and Present.html',
+  },
+  {
+    label: 'Poet in Residence',
+    path: '/Poet in Residence.html',
+  },
+];
+
 class NavBar extends LitElement {
   @property()
   accessor navTitle = '';
 
+  constructor() {
+    super();
+
+    this.tabs = tabList;
+    this.selected = -1;
+  }
+
   render() {
+    const items = [];
+
+    for (const [index, tab] of this.tabs.entries()) {
+      items.push(
+        when(
+          tab.icon,
+          () =>
+            html`<md-primary-tab
+              inline-icon
+              ?active=${index === this.selected}
+              .item=${tab}
+              ><md-icon slot="icon">home</md-icon>${tab.label}</md-primary-tab
+            >`,
+          () =>
+            html` <div style="position: relative">
+              <md-primary-tab
+                id="anchor"
+                ?active=${index === this.selected}
+                .item=${tab}
+                >${tab.label}
+              </md-primary-tab>
+              <md-menu anchor="anchor">
+                <md-menu-item>
+                  <div slot="headline">Test</div>
+                  <div slot="supporting-text">Tester</div>
+                  <md-icon slot="start">account_circle</md-icon>
+                </md-menu-item></md-menu
+              >
+            </div>`,
+        ),
+      );
+    }
+
     return html`<div class="navbar-container">
         <header class="top-app-bar admin-tabbar">
           <div class="top-app-bar-row admin-tabbar-row">
             <section
               class="top-app-bar-section top-app-bar-section-align-start"
             >
-              <div class="top-app-bar-tla">Westmuir Web</div>
+              <!-- <div class="top-app-bar-tla">Westmuir Web</div> -->
+
+              <md-tabs
+                class="admin-tabbar-tabs"
+                @change="onTabsChange"
+                @click=${onChoose}
+              >
+                ${items}
+              </md-tabs>
             </section>
             <section class="top-app-bar-section top-app-bar-section-align-end">
-              <md-outlined-button @click=${this.onClick}
+              <!-- <md-outlined-button @click=${this.onClick}
                 >Stuff</md-outlined-button
-              >
+              > -->
             </section>
           </div>
         </header>
@@ -44,8 +133,19 @@ class NavBar extends LitElement {
       <div class="top-app-bar-fixed-adjust"></div>`;
   }
 
-  onClick() {
-    console.log('on click');
+  onClick(event) {
+    const target = event.target; // target.nextElementSibling?.show();
+
+    const item = event.target.item;
+
+    const name = item?.path;
+
+    if (name) {
+      const pathname =
+        name === 'home' ? '/' : name.startsWith('/') ? name : `/admin/${name}`;
+      //   window.history.pushState({}, '', pathname);
+      window.location = pathname;
+    }
   }
 }
 

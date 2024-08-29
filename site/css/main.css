@@ -9,47 +9,55 @@
 
   --onc-signin-color: #0b4014;
 
-  --md-sys-color-primary: #875200;
-  --md-sys-color-primary-container: #ffddba;
-  --md-sys-color-on-primary: #ffffff;
-  --md-sys-color-on-primary-container: #2b1700;
-
-  --md-sys-color-secondary: #875200;
-  --md-sys-color-secondary-container: #ffddba;
-  --md-sys-color-on-secondary: #ffffff;
-  --md-sys-color-on-secondary-container: #2b1700;
-
-  --md-sys-color-tertiary: #55633c;
-  --md-sys-color-tertiary-container: #d9e9b7;
-  --md-sys-color-on-tertiary: #ffffff;
-  --md-sys-color-on-tertiary-container: #141f02;
-
-  --md-sys-color-error: #ba1a1a;
-  --md-sys-color-error-container: #ffdad6;
-  --md-sys-color-on-error: #ffffff;
-  --md-sys-color-on-error-container: #410002;
-  --md-sys-color-outline: #6f7979;
-  --md-sys-color-background: #fafdfc;
-  --md-sys-color-on-background: #191c1c;
-
-  --md-sys-color-surface: #fff8f4;
-  --md-sys-color-on-surface: #1f1b16;
-  --md-sys-color-surface-variant: #f1dfd0;
-  --md-sys-color-on-surface-variant: #50453a;
-
-  --md-sys-color-inverse-surface: #352f2a;
-  --md-sys-color-inverse-on-surface: #faefe7;
-  --md-sys-color-inverse-primary: #ffb866;
-
-  --md-sys-color-shadow: #000000;
-  --md-sys-color-surface-tint: #875200;
-  --md-sys-color-outline-variant: #bec9c8;
-  --md-sys-color-scrim: #000000;
-
-  --md-sys-color-surface-container: hsl(38, 30%, 93%);
-  --md-sys-color-surface-container-high: #f3f1ec;
-
-  --md-sys-color-surface-container-highest: #f5f5f5;
+  --md-sys-color-primary: rgb(58 105 58);
+  --md-sys-color-surface-tint: rgb(58 105 58);
+  --md-sys-color-on-primary: rgb(255 255 255);
+  --md-sys-color-primary-container: rgb(187 240 181);
+  --md-sys-color-on-primary-container: rgb(0 33 5);
+  --md-sys-color-secondary: rgb(82 99 79);
+  --md-sys-color-on-secondary: rgb(255 255 255);
+  --md-sys-color-secondary-container: rgb(213 232 207);
+  --md-sys-color-on-secondary-container: rgb(16 31 16);
+  --md-sys-color-tertiary: rgb(57 101 107);
+  --md-sys-color-on-tertiary: rgb(255 255 255);
+  --md-sys-color-tertiary-container: rgb(188 235 241);
+  --md-sys-color-on-tertiary-container: rgb(0 31 35);
+  --md-sys-color-error: rgb(186 26 26);
+  --md-sys-color-on-error: rgb(255 255 255);
+  --md-sys-color-error-container: rgb(255 218 214);
+  --md-sys-color-on-error-container: rgb(65 0 2);
+  --md-sys-color-background: rgb(247 251 241);
+  --md-sys-color-on-background: rgb(24 29 23);
+  --md-sys-color-surface: rgb(247 251 241);
+  --md-sys-color-on-surface: rgb(24 29 23);
+  --md-sys-color-surface-variant: rgb(222 229 217);
+  --md-sys-color-on-surface-variant: rgb(66 73 64);
+  --md-sys-color-outline: rgb(114 121 111);
+  --md-sys-color-outline-variant: rgb(194 201 189);
+  --md-sys-color-shadow: rgb(0 0 0);
+  --md-sys-color-scrim: rgb(0 0 0);
+  --md-sys-color-inverse-surface: rgb(45 50 44);
+  --md-sys-color-inverse-on-surface: rgb(238 242 233);
+  --md-sys-color-inverse-primary: rgb(160 212 155);
+  --md-sys-color-primary-fixed: rgb(187 240 181);
+  --md-sys-color-on-primary-fixed: rgb(0 33 5);
+  --md-sys-color-primary-fixed-dim: rgb(160 212 155);
+  --md-sys-color-on-primary-fixed-variant: rgb(34 80 37);
+  --md-sys-color-secondary-fixed: rgb(213 232 207);
+  --md-sys-color-on-secondary-fixed: rgb(16 31 16);
+  --md-sys-color-secondary-fixed-dim: rgb(185 204 180);
+  --md-sys-color-on-secondary-fixed-variant: rgb(59 75 57);
+  --md-sys-color-tertiary-fixed: rgb(188 235 241);
+  --md-sys-color-on-tertiary-fixed: rgb(0 31 35);
+  --md-sys-color-tertiary-fixed-dim: rgb(161 206 213);
+  --md-sys-color-on-tertiary-fixed-variant: rgb(31 77 83);
+  --md-sys-color-surface-dim: rgb(216 219 210);
+  --md-sys-color-surface-bright: rgb(247 251 241);
+  --md-sys-color-surface-container-lowest: rgb(255 255 255);
+  --md-sys-color-surface-container-low: rgb(241 245 236);
+  --md-sys-color-surface-container: rgb(236 239 230);
+  --md-sys-color-surface-container-high: rgb(230 233 224);
+  --md-sys-color-surface-container-highest: rgb(224 228 219);
 
   --my-brand-font: 'Roboto';
   --my-headline-font: 'Roboto';
