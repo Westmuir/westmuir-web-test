@@ -1,5 +1,5 @@
 // this is used the /site/index.html
 
-import '@material/web/button/outlined-button.js';
+import '~/components/navbar.js';
 
 console.log('this has stuff for your home page');

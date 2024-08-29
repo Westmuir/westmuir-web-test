@@ -16,8 +16,8 @@ const tsEntrypoints = [
   // // also include a bundle for each individual page
   './src/pages/*.js',
   // // SSR stuff
-  // './src/ssr-utils/lit-hydrate-support.ts',
-  // './src/ssr-utils/is-land.js',
+  './src/ssr-utils/lit-hydrate-support.js',
+  './src/ssr-utils/is-land.js',
 ];
 
 const filesPromises = tsEntrypoints.map(async entry => tinyGlob(entry));
@@ -33,6 +33,7 @@ let config = {
   write: true,
   sourcemap: true,
   splitting: true,
+  target: ['es2022'],
 };
 
 let componentsBuild = Promise.resolve();
