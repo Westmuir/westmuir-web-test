@@ -1,4 +1,5 @@
 import eleventyNavigationPlugin from '@11ty/eleventy-navigation';
+import UpgradeHelper from '@11ty/eleventy-upgrade-help';
 import litPlugin from '@lit-labs/eleventy-plugin-lit';
 import { inlineCSS } from './eleventy-helpers/shortcodes/inline-css.js';
 import { inlineJS } from './eleventy-helpers/shortcodes/inline-js.js';
@@ -19,6 +20,7 @@ export default function (eleventyConfig) {
     .addPassthroughCopy('site/Walk of the Month')
     .addPassthroughCopy('site/videos')
     .addPassthroughCopy('site/css/*.css')
+    .addPassthroughCopy('logs/*')
     .addPassthroughCopy({ [`${jsDir}/`]: 'js/' });
 
   // add the lit-ssr plugin
@@ -28,6 +30,9 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
+  // must be lasdt plugin
+  eleventyConfig.addPlugin(UpgradeHelper);
 
   // Add this for 11ty's --watch flag
   eleventyConfig.addWatchTarget(`./${jsDir}/**/*.js`);
