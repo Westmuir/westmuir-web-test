@@ -1,4 +1,4 @@
-const fsSync = require('fs');
+import fsSync from 'fs';
 
 /**
  * Inline the Rollup-bundled version of a JavaScript module. Path is relative
@@ -7,7 +7,7 @@ const fsSync = require('fs');
  * In dev mode, instead directly import the module, which has already been
  * symlinked directly to the TypeScript output directory.
  */
-function inlineJS(eleventyConfig, isDev, { jsDir }) {
+export function inlineJS(eleventyConfig, isDev, { jsDir }) {
   eleventyConfig.addShortcode('inlinejs', path => {
     if (isDev) {
       return `<script type="module" src="/js/${path}"></script>`;
@@ -16,5 +16,3 @@ function inlineJS(eleventyConfig, isDev, { jsDir }) {
     return `<script type="module">${script}</script>`;
   });
 }
-
-module.exports = inlineJS;

@@ -1,9 +1,9 @@
-const htmlMinifier = require('html-minifier');
+import htmlMinifier from 'html-minifier';
 
 /**
  * Minifies HTML in production mode.
  */
-function inlineJS(eleventyConfig, isDev) {
+export function minifyHTML(eleventyConfig, isDev) {
   // minify the html in Prod mode
   eleventyConfig.addTransform('htmlMinify', function (content, outputPath) {
     if (isDev || !outputPath.endsWith('.html')) {
@@ -17,5 +17,3 @@ function inlineJS(eleventyConfig, isDev) {
     return minified;
   });
 }
-
-module.exports = inlineJS;

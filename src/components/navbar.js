@@ -21,7 +21,7 @@ const onChoose = ({ target }) => {
 };
 
 const tabList = [
-  { label: 'Home', path: 'home', href: '/', icon: 'home' },
+  { label: 'Home', path: 'home', href: '/', icon: 'home ' },
   {
     label: 'Woodland',
     path: '/Woodland_Park.html',
@@ -86,21 +86,12 @@ class NavBar extends LitElement {
               ><md-icon slot="icon">home</md-icon>${tab.label}</md-primary-tab
             >`,
           () =>
-            html` <div style="position: relative">
-              <md-primary-tab
-                id="anchor"
-                ?active=${index === this.selected}
-                .item=${tab}
-                >${tab.label}
-              </md-primary-tab>
-              <md-menu anchor="anchor">
-                <md-menu-item>
-                  <div slot="headline">Test</div>
-                  <div slot="supporting-text">Tester</div>
-                  <md-icon slot="start">account_circle</md-icon>
-                </md-menu-item></md-menu
-              >
-            </div>`,
+            html` <md-primary-tab
+              id="anchor"
+              ?active=${index === this.selected}
+              .item=${tab}
+              ><a class="navlink" href="/"> ${tab.label}</a>
+            </md-primary-tab>`,
         ),
       );
     }
@@ -113,11 +104,7 @@ class NavBar extends LitElement {
             >
               <!-- <div class="top-app-bar-tla">Westmuir Web</div> -->
 
-              <md-tabs
-                class="admin-tabbar-tabs"
-                @change="onTabsChange"
-                @click=${onChoose}
-              >
+              <md-tabs class="admin-tabbar-tabs" @change="onTabsChange">
                 ${items}
               </md-tabs>
             </section>
@@ -268,6 +255,11 @@ export class WWNavBarNav extends NavBar {
 
       min-width: 0;
       padding: 8px 12px;
+    }
+
+    .navlink {
+      color: inherit;
+      text-decoration: inherit;
     }
   `;
 }

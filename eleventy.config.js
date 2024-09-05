@@ -1,7 +1,8 @@
-const litPlugin = require('@lit-labs/eleventy-plugin-lit');
-const inlineCss = require('./eleventy-helpers/shortcodes/inline-css.cjs');
-const inlineJS = require('./eleventy-helpers/shortcodes/inline-js.cjs');
-const minifyHTML = require('./eleventy-helpers/transforms/minify-html.cjs');
+import eleventyNavigationPlugin from '@11ty/eleventy-navigation';
+import litPlugin from '@lit-labs/eleventy-plugin-lit';
+import { inlineCSS } from './eleventy-helpers/shortcodes/inline-css.js';
+import { inlineJS } from './eleventy-helpers/shortcodes/inline-js.js';
+import { minifyHTML } from './eleventy-helpers/transforms/minify-html.js';
 
 // dev mode build
 const DEV = process.env.NODE_ENV === 'DEV';
@@ -10,7 +11,7 @@ const jsDir = DEV ? 'lib' : 'build';
 // where to output 11ty output
 const outputFolder = DEV ? '_dev' : '_prod';
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig
     .addPassthroughCopy('site/images')
     .addPassthroughCopy('site/favicon.ico')
@@ -26,11 +27,13 @@ module.exports = function (eleventyConfig) {
     componentModules: [`./${jsDir}/ssr.js`],
   });
 
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
   // Add this for 11ty's --watch flag
   eleventyConfig.addWatchTarget(`./${jsDir}/**/*.js`);
 
   // install shortcodes
-  inlineCss(eleventyConfig, DEV);
+  inlineCSS(eleventyConfig, DEV);
   inlineJS(eleventyConfig, DEV, { jsDir });
 
   eleventyConfig.addLayoutAlias('default', 'layouts/base.html');
@@ -51,4 +54,4 @@ module.exports = function (eleventyConfig) {
       output: outputFolder,
     },
   };
-};
+}

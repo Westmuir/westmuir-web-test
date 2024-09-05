@@ -1,11 +1,11 @@
-const CleanCSS = require('clean-css');
+import CleanCSS from 'clean-css';
 
 /**
  * Bundle, minify, and inline a CSS file. Path is relative to ./site/css/.
  *
  * In dev mode, instead import the CSS file directly.
  */
-function inlineCSS(eleventyConfig, isDev) {
+export function inlineCSS(eleventyConfig, isDev) {
   eleventyConfig.addShortcode('inlinecss', path => {
     if (isDev) {
       return `<link rel="stylesheet" href="/css/${path}">`;
@@ -24,5 +24,3 @@ function inlineCSS(eleventyConfig, isDev) {
     return `<style>${result.styles}</style>`;
   });
 }
-
-module.exports = inlineCSS;

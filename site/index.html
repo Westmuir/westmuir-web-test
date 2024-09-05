@@ -1,9 +1,21 @@
 ---
 layout: default
 css: ['css/home.css']
+eleventyNavigation:
+  key: Home
 ---
 
 <div class="main-wrapper">
+  <div class="elv-menu">
+    {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+  </div>
+
+  <header class="top-app-bar admin-tabbar">
+    <div class="top-app-bar-row admin-tabbar-row">
+      <section class="top-app-bar-section top-app-bar-section-align-start"></section>
+    </div>
+  </header>
+
   <img
     src="images/Westmuir Cortachy Header.jpg"
     alt="Westmuir Banner"
