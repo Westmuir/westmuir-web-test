@@ -21,6 +21,15 @@
 .home-item {
   padding: 20px;
 }
+.poster-item {
+  max-width: 500px;
+}
+
+.poster-item-wide {
+  max-width: 768px;
+}
+
+
 .home-item-image {
   max-width: 100%;
 
