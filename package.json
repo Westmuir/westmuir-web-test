@@ -9,8 +9,8 @@
     "dev": "npm run serve:dev --watch",
     "serve": "wireit",
     "serve:dev": "wireit",
-    "ci": "build:prod",
-    "build": "build:prod",
+    "ci": "wireit",
+    "build": "wireit",
     "build:dev": "wireit",
     "build:dev:eleventy": "wireit",
     "build:dev:js": "wireit",
@@ -49,6 +49,18 @@
       ],
       "output": [
         "lib/**/*"
+      ]
+    },
+    "ci": {
+      "dependencies": [
+        "build:prod",
+        "build:prod"
+      ]
+    },
+    "build": {
+      "dependencies": [
+        "build:prod",
+        "build:prod"
       ]
     },
     "build:prod": {
