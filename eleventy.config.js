@@ -9,7 +9,7 @@ const DEV = process.env.NODE_ENV === 'DEV';
 // where the JS files are outputted
 const jsDir = DEV ? 'lib' : 'build';
 // where to output 11ty output
-const outputFolder = DEV ? '_dev' : '_prod';
+const outputFolder = DEV ? '_dev' : '_site';
 
 export default function (eleventyConfig) {
   eleventyConfig
