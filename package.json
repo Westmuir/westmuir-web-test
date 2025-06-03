@@ -51,6 +51,12 @@
         "lib/**/*"
       ]
     },
+    "build:prod": {
+      "dependencies": [
+        "build:prod:eleventy",
+        "build:prod:js"
+      ]
+    },
     "ci": {
       "dependencies": [
         "build:prod",
@@ -61,12 +67,6 @@
       "dependencies": [
         "build:prod",
         "build:prod"
-      ]
-    },
-    "build:prod": {
-      "dependencies": [
-        "build:prod:eleventy",
-        "build:prod:js"
       ]
     },
     "build:prod:eleventy": {
