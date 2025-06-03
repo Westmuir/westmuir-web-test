@@ -59,13 +59,11 @@
     },
     "ci": {
       "dependencies": [
-        "build:prod",
         "build:prod"
       ]
     },
     "build": {
       "dependencies": [
-        "build:prod",
         "build:prod"
       ]
     },
