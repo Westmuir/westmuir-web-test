@@ -1,0 +1,21 @@
+<section class="section-cards">
+  <div class="nav-cards">
+    {% for item in cards %}<a href="{{ item.url }}" class="nav-card elevate">
+      {% if item.image %}
+      <img
+        src="{{ item.image }}"
+        alt="{{ item.label }} image"
+        class="card-image"
+      />
+      {% else %}
+      <div class="material-symbols-outlined icon">{{ item.icon }}</div>
+      {% endif %}
+      <div class="label">{{ item.label }}</div>
+      <div class="description-toggle">
+        <input type="checkbox" id="desc-{{ loop.index }}" class="toggle-box" />
+        <div class="description-content">{{ item.description }}</div>
+        <label for="desc-{{ loop.index }}" class="toggle-label"></label>
+      </div> </a
+    >{% endfor %}
+  </div>
+</section>
