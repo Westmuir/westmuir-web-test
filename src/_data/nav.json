@@ -2,19 +2,7 @@
   {
     "title": "About",
     "url": "/about/",
-    "iconX": "info",
-    "children": [
-      {
-        "title": "Mission",
-        "url": "/about/mission/",
-        "iconX": "flag"
-      },
-      {
-        "title": "Volunteers",
-        "url": "/about/volunteers/",
-        "iconX": "group"
-      }
-    ]
+    "iconX": "info"
   },
   {
     "title": "Contact",

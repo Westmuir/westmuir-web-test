@@ -1,12 +1,15 @@
 ---
 title: Woodland
-layout: default.njk
+layout: base
 description: Learn about the Westmuir Community Development Trust and the Woodland.
+eleventyNavigation:
+  key: Woodland
+  order: 1
 ---
 
-## WESTMUIR COMMUNITY WOODLAND PARK
+## WESTMUIR COMMUNITY WOODLAND PARK {}
 
-![Woodland](/images/community-woodland-1-banner-with-text.jpg)
+![Woodland](/assets/images/community-woodland-1-banner-with-text.jpg)
 
 Big tussocks of moss, wet birch woodland dripping with lichen, common lizards basking in the sun on the boardwalks, birds flitting, the buzz of insects on wildflowers and the recreation of local people, all this is part of our community woodland.
 

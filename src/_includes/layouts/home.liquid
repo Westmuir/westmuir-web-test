@@ -1,4 +1,4 @@
-{% extends "layouts/base.njk" %} {% block content %}
+{% extends "layouts/base.liquid" %} {% block content %}
 
 <main class="main">
   {{ content | safe }}
@@ -12,5 +12,5 @@
     <a href="/about/" class="btn">Learn More</a>
   </div>
 </section>
-{% endif %} {% if cta %} {% include "partials/cta.njk" %} {% endif %} {%
+{% endif %} {% if cta %} {% include "partials/cta.liquid" %} {% endif %} {%
 endblock %}

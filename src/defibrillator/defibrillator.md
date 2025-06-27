@@ -1,7 +1,10 @@
 ---
 title: Defibrillator
-layout: default.njk
+layout: base
 description: Learn about the Westmuir Village Defibrillator.
+eleventyNavigation:
+  key: Defibrillator
+  order: 3
 ---
 
 ## WESTMUIR DEFIBRILATOR – Community Public Access Defibrillator (CPAD)

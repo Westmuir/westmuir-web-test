@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.center {
+  text-align: center;
+}
+
+.home-main {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  columns: 20px;
+  max-width: 1024px;
+}
+
+.home-aside {
+  background-color: #fff;
+  text-align: center;
+  vertical-align: top;
+  min-width: 20em;
+}
+.home-aside blockquote {
+  margin: 1em;
+}
+
+.home-aside-image {
+  max-width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.home-content {
+  vertical-align: top;
+}
+.home-item {
+  text-align: center;
+}
+
+.home-item .title {
+  font-size: 22px;
+  color: #339933;
+}
+
+.poster-item {
+  max-width: 500px;
+}
+
+.poster-item-wide {
+  max-width: 768px;
+}

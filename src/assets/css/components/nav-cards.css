@@ -1,3 +1,7 @@
+.section-cards {
+  margin: auto;
+}
+
 /* Cards */
 .nav-cards {
   display: grid;
